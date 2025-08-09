@@ -5,7 +5,11 @@ return {
     'nvim-tree/nvim-web-devicons',
   },
   config = function()
-    require('neo-tree').setup({
+    require('neo-tree').setup({ 
+        window = {
+            position = "right",  -- "left", "right", "top", "bottom"
+            width = 30,
+        },
       default_component_configs = {
         git_status = {
           symbols = {

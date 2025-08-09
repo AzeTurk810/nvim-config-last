@@ -24,8 +24,11 @@ return {
 
     lspconfig.lua_ls.setup({})
     lspconfig.pyright.setup({})
+    lspconfig.html.setup({})
+    lspconfig.cssls.setup({})
+    lspconfig.tsserver.setup({})
     lspconfig.clangd.setup({
-      cmd = { 'clangd', '--header-insertion=never', '--function-arg-placeholders=false' }
+      cmd = { 'clangd', '--function-arg-placeholders=false' }
     })
 
     vim.diagnostic.config({
