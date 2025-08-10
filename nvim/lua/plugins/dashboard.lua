@@ -56,6 +56,12 @@ return {
             action = 'Telescope oldfiles'
           },
           {
+              icon = '  ',         -- Folder icon (or choose any icon you like)
+              desc = 'Projects           ',
+              key = 'p',
+              action = 'Telescope project'
+          },
+          {
             icon = '  ',
             desc = 'Config             ',
             key = 'c',

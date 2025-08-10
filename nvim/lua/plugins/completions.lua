@@ -15,6 +15,9 @@ return {
     local text = luasnip.text_node
     local s = luasnip.snippet
     local t = luasnip.text_node
+    require("luasnip.loaders.from_vscode").load {
+        exclude = { "javascript" , "c++" },
+    }
 
     luasnip.add_snippets('cpp', {
         s('cd' , {
