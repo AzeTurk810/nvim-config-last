@@ -12,6 +12,12 @@ vim.opt.expandtab = true
 
 vim.opt.signcolumn = 'no'
 
+-- vim.o.wildmenu = true
+-- vim.o.wildmode = 'list:longest,full'
+-- vim.o.wildoptions = 'pum' -- show as popup menu
+-- vim.o.pumblend = 10       -- transparency
+
+
 vim.opt.fillchars:append({ eob = ' ' })
 
 vim.opt.updatetime = 200

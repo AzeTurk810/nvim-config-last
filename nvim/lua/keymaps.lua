@@ -6,6 +6,7 @@ vim.keymap.set('n', '<leader>e', ':%y+<CR>', { silent = true })
 vim.keymap.set('n', '<leader>=', 'gg=G', { silent = true })
 
 vim.keymap.set('n', '<leader>t', ':Telescope<CR>', { silent = true })
+vim.keymap.set('n', '<leader>nd', '<cmd>NoiceDismiss<CR>',{desc = "Noice mesajlarini dissmis et"})
 
 vim.keymap.set('n', '<C-h>', ':TmuwNavigateLeft<CR>', { silent = true })
 vim.keymap.set('n', '<C-j>', ':TmuxNavigateDown<CR>', { silent = true })
