@@ -27,7 +27,7 @@ return {
 
                 max_name_length = 30,
                 max_prefix_length = 30,
-                tab_size = 25,
+                tab_size = 18,
 
                 diagnostics = "nvim_lsp", -- show LSP diagnostics in tab
                 diagnostics_update_in_insert = false,
