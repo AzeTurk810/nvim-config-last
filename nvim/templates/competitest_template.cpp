@@ -19,7 +19,6 @@ using namespace std;
 #define INFll 1e18
 
 void solve() {
-    
 }
 
 signed main() {

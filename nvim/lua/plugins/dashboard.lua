@@ -1,7 +1,20 @@
 return {
   'nvimdev/dashboard-nvim',
   config = function()
-    require('dashboard').setup({
+      -- local start_time = vim.g.startup_time or vim.loop.hrtime()
+      -- vim.api.nvim_create_autocmd("VimEnter", {
+      --     once = true,
+      --     callback = function()
+      --         local elapsed_ms = (vim.loop.hrtime() - start_time) / 1e6
+      --         local plugins = vim.tbl_count(package.loaded) -- rough plugin count
+      --         vim.g.startup_stats = { plugins = plugins, time = elapsed_ms }
+      --     end,
+      -- })
+      --
+      -- Then inside your dashboard config
+      -- local plugin_count = vim.g.startup_stats and vim.g.startup_stats.plugins or 0
+      -- local startup_time = vim.g.startup_stats and vim.g.startup_stats.time or 0
+      require('dashboard').setup({
       theme = 'doom',
       config = {
         header = {
@@ -74,7 +87,18 @@ return {
             action = 'qa'
           }
         },
-        footer = {}
+        -- footer = {
+            -- local stats = require("lazy").stats()
+            -- local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+            -- return { "⚡ Neovim loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms .. "ms" }
+            -- string.format('Neovim loaded %d plugins in %.2f ms', plugin_count, startup_time)
+        -- }
+        -- footer = function()
+            -- local stats = require("lazy").stats()
+            -- local ms = (math.floor(stats.startuptime * 100 + 0.5) / 100)
+            -- return "⚡ Neovim loaded " .. stats.loaded .. " plugins in " .. ms .. " ms"
+        -- end,
+
       },
     })
   end
