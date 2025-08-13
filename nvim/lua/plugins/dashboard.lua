@@ -75,6 +75,22 @@ return {
               action = 'Telescope project'
           },
           {
+            icon = '  ',
+            desc = 'Last Session       ',
+            key = 'l',
+            action = function()
+              require("auto-session").RestoreSession()
+            end
+          },
+          {
+              icon = '󰈞  ',
+              desc = 'Search Session     ',
+              key = 's',
+              action = function()
+                  require("telescope").extensions["session-lens"].search_session()
+              end
+          },
+          {
             icon = '  ',
             desc = 'Config             ',
             key = 'c',

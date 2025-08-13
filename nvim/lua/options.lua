@@ -17,6 +17,13 @@ vim.opt.signcolumn = 'no'
 -- vim.o.wildoptions = 'pum' -- show as popup menu
 -- vim.o.pumblend = 10       -- transparency
 
+vim.api.nvim_create_autocmd("TabNewEntered", {
+  callback = function()
+    vim.cmd("Dashboard")
+  end,
+})
+
+
 
 vim.opt.fillchars:append({ eob = ' ' })
 

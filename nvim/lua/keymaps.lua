@@ -9,12 +9,25 @@ vim.keymap.set('n', '<leader>t', ':Telescope<CR>', { silent = true })
 vim.keymap.set('n', '<leader>o', ':Telescope lsp_document_symbols<CR>', { silent = true })
 vim.keymap.set('n', '<leader>nd', '<cmd>NoiceDismiss<CR>',{desc = "Noice mesajlarini dissmis et"})
 
+vim.api.nvim_set_keymap('n', '<leader>m', ':Dashboard<CR>', { noremap = true, silent = true , desc = "Dashboard a get" })
+
 vim.keymap.set('n', '<C-h>', ':TmuwNavigateLeft<CR>', { silent = true })
 vim.keymap.set('n', '<C-j>', ':TmuxNavigateDown<CR>', { silent = true })
 vim.keymap.set('n', '<C-k>', ':TmuxNavigateUp<CR>', { silent = true })
 vim.keymap.set('n', '<C-l>', ':TmuxNavigateRight<CR>', { silent = true })
 
 vim.keymap.set('n', '<C-e>', ':Neotree toggle<CR>', { silent = true })
+
+vim.api.nvim_set_keymap('n', '<leader>h', ':bdelete<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>j', ':tabnew<CR>', { noremap = true, silent = true })
+
+vim.keymap.set('n', '<leader>k', function()
+    vim.cmd('Neotree close')
+  vim.cmd('SessionSave')
+  vim.cmd('qa')
+end, { desc = 'Save session and quit all' })
+
+
 
 vim.keymap.set('n', '<C-g>', '', { silent = true })
 

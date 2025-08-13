@@ -2,20 +2,20 @@ return {
     "akinsho/bufferline.nvim",
     version = "*",
     dependencies = {
-        "nvim-tree/nvim-web-devicons", -- for file icons
+        "nvim-tree/nvim-web-devicons",
     },
     config = function()
         require("bufferline").setup({
             options = {
-                mode = "buffers", -- or "tabs"
-                numbers = "none", -- "ordinal" | "buffer_id" | "both" etc.
-                close_command = "bdelete! %d", -- close buffer
+                mode = "buffers",
+                numbers = "none", 
+                close_command = "bdelete! %d", 
                 right_mouse_command = "bdelete! %d",
                 left_mouse_command = "buffer %d",
                 middle_mouse_command = nil,
 
                 indicator = {
-                    icon = "▎", -- or '|' or anything else
+                    icon = "▎", 
                     style = "icon",
                 },
 
@@ -29,18 +29,18 @@ return {
                 max_prefix_length = 30,
                 tab_size = 18,
 
-                diagnostics = "nvim_lsp", -- show LSP diagnostics in tab
+                diagnostics = "nvim_lsp",
                 diagnostics_update_in_insert = false,
 
                 offsets = {
                     {
-                        filetype = "neo-tree", -- for Neo-tree
+                        filetype = "neo-tree",
                         text = "File Explorer",
                         text_align = "center",
                         separator = true,
                     },
                     {
-                        filetype = "NvimTree", -- for nvim-tree
+                        filetype = "NvimTree", 
                         text = "File Explorer",
                         text_align = "center",
                         separator = true,
@@ -54,10 +54,10 @@ return {
 
                 persist_buffer_sort = true,
 
-                separator_style = "slant", -- "slant" | "thick" | "thin" | { 'any', 'any' }
+                separator_style = "slant", 
                 enforce_regular_tabs = false,
                 always_show_bufferline = true,
-                sort_by = "id", -- or "extension" | "relative_directory" | "directory" | function(buffer_a, buffer_b) end
+                sort_by = "id", 
             },
         })
     end
