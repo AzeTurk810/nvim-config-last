@@ -11,6 +11,9 @@ vim.keymap.set('n', '<leader>nd', '<cmd>NoiceDismiss<CR>',{desc = "Noice mesajla
 
 vim.api.nvim_set_keymap('n', '<leader>m', ':Dashboard<CR>', { noremap = true, silent = true , desc = "Dashboard a get" })
 
+
+
+
 vim.keymap.set('n', '<C-h>', ':TmuwNavigateLeft<CR>', { silent = true })
 vim.keymap.set('n', '<C-j>', ':TmuxNavigateDown<CR>', { silent = true })
 vim.keymap.set('n', '<C-k>', ':TmuxNavigateUp<CR>', { silent = true })
