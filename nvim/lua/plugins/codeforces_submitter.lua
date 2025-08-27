@@ -1,3 +1,3 @@
 return {
-        'JustAnAverageGuy/codeforces_submitter.nvim',
+    "AzeTurk810/codeforces_submitter.nvim",
 }

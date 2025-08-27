@@ -6,11 +6,17 @@ vim.keymap.set('n', '<leader>e', ':%y+<CR>', { silent = true })
 vim.keymap.set('n', '<leader>=', 'gg=G', { silent = true })
 
 vim.keymap.set('n', '<leader>t', ':Telescope<CR>', { silent = true })
-vim.keymap.set('n', '<leader>o', ':Telescope lsp_document_symbols<CR>', { silent = true })
+vim.keymap.set('n', '<leader>o', ':Telescope lsp_document_symbols<CR>', { silent = true , desc = "funksiyalari gorster"})
 vim.keymap.set('n', '<leader>nd', '<cmd>NoiceDismiss<CR>',{desc = "Noice mesajlarini dissmis et"})
 
 vim.api.nvim_set_keymap('n', '<leader>m', ':Dashboard<CR>', { noremap = true, silent = true , desc = "Dashboard a get" })
 
+-- cava
+vim.api.nvim_set_keymap('n', '<leader>cv', ':botright 10split | terminal cava<CR>', { noremap = true, silent = true })
+
+
+-- cmus
+vim.api.nvim_set_keymap('n', '<leader>cu', ':terminal cmus<CR>', { noremap = true, silent = true })
 
 
 
@@ -25,6 +31,15 @@ vim.api.nvim_set_keymap('n', '<leader>h', ':bdelete<CR>', { noremap = true, sile
 vim.api.nvim_set_keymap('n', '<leader>j', ':tabnew<CR>', { noremap = true, silent = true })
 
 vim.keymap.set('n', '<leader>k', function()
+    -- Close cava terminal split if open
+  for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+    if vim.api.nvim_buf_is_loaded(buf) and vim.api.nvim_buf_get_option(buf, 'buftype') == 'terminal' then
+      local name = vim.api.nvim_buf_get_name(buf)
+      if name:match('cava') then
+        vim.api.nvim_buf_delete(buf, { force = true })
+      end
+    end
+  end
     vim.cmd('Neotree close')
   vim.cmd('SessionSave')
   vim.cmd('qa')

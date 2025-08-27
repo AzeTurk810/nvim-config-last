@@ -1,6 +1,8 @@
 -- Set leader key before any mappings
 vim.g.mapleader = ' '
 
+-- cava
+--
 -- Lazy.nvim bootstrap (unchanged)
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -41,6 +43,7 @@ vim.keymap.set("n", "<C-r>", function()
   vim.cmd("terminal " .. bash_cmd)
 end, { noremap = true })
 
+vim.o.termguicolors = true
 
 require('options')
 require('keymaps')
